@@ -66,7 +66,10 @@ public class ClientMoralDaoSql implements ClientMoralDao {
 					// CLients
 					listeClientsMoral.add(clientMoral);
 				}
+				
+				
 			}
+		
 			/*
 			 * Etape 5 : je ferme la connexion a  la BDD
 			 */
@@ -117,6 +120,10 @@ public class ClientMoralDaoSql implements ClientMoralDao {
 				// Chaque ligne du tableau de résultat peut Ãªtre exploitÃ©e
 				// cad, on va récupérer chaque valeur de chaque colonne
 				// je créé l'objet métier
+				
+				if (resultSet.getString("siret") != null)
+
+				
 				clientMoral = new ClientMoral();
 				// appel des mutateurs
 				clientMoral.setSiret(resultSet.getInt("siret"));
@@ -125,7 +132,6 @@ public class ClientMoralDaoSql implements ClientMoralDao {
 				clientMoral.setNumTel(resultSet.getString("numTel"));
 				clientMoral.setNumFax(resultSet.getString("numFax"));
 				clientMoral.setEmail(resultSet.getString("eMail"));
-				
 			}
 
 			// Etape 5 : je ferme la connexion Ã  la BDD

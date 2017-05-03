@@ -69,17 +69,17 @@ public class MainDB
         // J'appelle la méthode findAll pour récupérer tous les BO de ce type de
         // la BDD
         List<ClientPhysique> listeClientPhysique = ClientPhysiqueDaoSql.findAll();
-        ClientPhysique clientPhysique = ClientPhysiqueDaoSql.findById(50);
+        ClientPhysique clientPhysique = ClientPhysiqueDaoSql.findById(12);
         System.out.println(clientPhysique);
 
         ClientMoralDaoSql ClientMoralDaoSql = new ClientMoralDaoSql();
         // J'appelle la méthode findAll pour récupérer tous les BO de ce type de
         // la BDD
         List<ClientMoral> listeClientMoral = ClientMoralDaoSql.findAll();
-        ClientMoral clientMoral = ClientMoralDaoSql.findById(50);
+        ClientMoral clientMoral = ClientMoralDaoSql.findById(12);
         System.out.println(listeClientMoral);
         
-        
+      
     }
 
 }
