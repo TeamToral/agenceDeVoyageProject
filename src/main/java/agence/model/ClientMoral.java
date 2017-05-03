@@ -2,9 +2,9 @@ package agence.model;
 
 public class ClientMoral extends Client {
 
-	private String siret;
+	private int siret;
 	
-	public ClientMoral(String siret)
+	public ClientMoral(int siret)
     {
         this.siret = siret;
     }
@@ -18,14 +18,14 @@ public class ClientMoral extends Client {
 	/**
 	 * @return the siret
 	 */
-	public String getSiret() {
+	public int getSiret() {
 		return siret;
 	}
 
 	/**
 	 * @param siret the siret to set
 	 */
-	public void setSiret(String siret) {
+	public void setSiret(int siret) {
 		this.siret = siret;
 	}
 
@@ -34,7 +34,8 @@ public class ClientMoral extends Client {
 	 */
 	@Override
 	public String toString() {
-		return "ClientMoral [siret=" + siret + "]";
+		return "ClientMoral [siret=" + siret + ", idClient=" + idClient + ", nomClient=" + nomClient + ", numTel="
+				+ numTel + ", numFax=" + numFax + ", email=" + email + "]";
 	}
 		
 	

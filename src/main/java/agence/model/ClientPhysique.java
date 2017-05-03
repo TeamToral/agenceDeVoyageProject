@@ -36,7 +36,9 @@ public class ClientPhysique extends Client {
 	 */
 	@Override
 	public String toString() {
-		return "ClientPhysique [prenom=" + prenom + "]";
+		
+		return "ClientPhysique [idClient=" + idClient + ", nomClient=" + nomClient + ", prenom=" + prenom + ", numTel=" + numTel + ", numFax=" + numFax
+				+ ", email=" + email + "]";
 	}
 	
     

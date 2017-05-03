@@ -9,16 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import agence.model.Client;
-import agence.model.ClientPhysique;
-import agence.model.Passager;
+import agence.model.ClientMoral;
+import agence.model.ClientMoral;
 
-public class ClientPhysiqueDaoSql implements ClientPhysiqueDao {
+public class ClientMoralDaoSql implements ClientMoralDao {
 
 	@Override
-	public List<ClientPhysique> findAll() {
+	public List<ClientMoral> findAll() {
 
 		// Initialiser ma liste de passagers
-		List<ClientPhysique> listeCLientsPhysique = new ArrayList<>();
+		List<ClientMoral> listeClientsMoral = new ArrayList<>();
 		try {
 			/*
 			 * Etape 0 : chargement du pilote
@@ -48,27 +48,30 @@ public class ClientPhysiqueDaoSql implements ClientPhysiqueDao {
 				// Chaque ligne du tableau de résultat peut être exploité
 				// cad, on va récupérer chaque valeur de chaque colonne
 				// je créé l'objet passager
-				ClientPhysique clientPhysique = new ClientPhysique();
-				
-				if (resultSet.getString("siret") == null)
+				ClientMoral clientMoral = new ClientMoral();
+
+				if (resultSet.getString("siret") != null)
 
 				{
 					// appel du ou des mutateurs
-					clientPhysique.setPrenom(resultSet.getString("prenom"));
-					clientPhysique.setIdClient(resultSet.getInt("idClient"));
-					clientPhysique.setNomClient(resultSet.getString("nom"));
-					clientPhysique.setNumTel(resultSet.getString("numTel"));
-					clientPhysique.setNumFax(resultSet.getString("numFax"));
-					clientPhysique.setEmail(resultSet.getString("email"));
+					clientMoral.setSiret(resultSet.getInt("siret"));
+					clientMoral.setIdClient(resultSet.getInt("idClient"));
+					clientMoral.setNomClient(resultSet.getString("nom"));
+					clientMoral.setNumTel(resultSet.getString("numTel"));
+					clientMoral.setNumFax(resultSet.getString("numFax"));
+					clientMoral.setEmail(resultSet.getString("eMail"));
+					
+
+					// j'ajoute l'objet clientMoral ainsi muté à  la liste des
+					// CLients
+					listeClientsMoral.add(clientMoral);
 				}
-
-				// j'ajoute l'objet clientPhysique ainsi muté à  la liste des
-				// passagers
-				listeCLientsPhysique.add(clientPhysique);
+				
+				
 			}
-
+		
 			/*
-			 * Etape 5 : je ferme la connexion Ã  la BDD
+			 * Etape 5 : je ferme la connexion a  la BDD
 			 */
 			connexion.close();
 		} catch (ClassNotFoundException e) {
@@ -78,16 +81,16 @@ public class ClientPhysiqueDaoSql implements ClientPhysiqueDao {
 			System.err.println("Impossible de se connecter à  la BDD.");
 			e.printStackTrace();
 		}
-		// Je retourne la liste des passagers de la BDD
-		return listeCLientsPhysique;
+		// Je retourne la liste des clients de la BDD
+		return listeClientsMoral;
 
 	}
 
 	@Override
-	public ClientPhysique findById(Integer id) {
+	public ClientMoral findById(Integer id) {
 
 		// Initialiser mon client physique
-		ClientPhysique clientPhysique = new ClientPhysique();
+		ClientMoral clientMoral = new ClientMoral();
 
 		try {
 			/*
@@ -114,22 +117,21 @@ public class ClientPhysiqueDaoSql implements ClientPhysiqueDao {
 			// Etape 4 : Parcours des résultats
 
 			if (resultSet.next()) {
-				if (resultSet.getString("siret") == null)
+				// Chaque ligne du tableau de résultat peut Ãªtre exploitÃ©e
+				// cad, on va récupérer chaque valeur de chaque colonne
+				// je créé l'objet métier
+				
+				if (resultSet.getString("siret") != null)
 
-				{
-					// Chaque ligne du tableau de résultat peut Ãªtre exploitÃ©e
-					// cad, on va récupérer chaque valeur de chaque colonne
-					// je créé l'objet métier
-					clientPhysique = new ClientPhysique();
-					// appel des mutateurs
-					clientPhysique.setPrenom(resultSet.getString("prenom"));
-					clientPhysique.setIdClient(resultSet.getInt("idClient"));
-					clientPhysique.setNomClient(resultSet.getString("nom"));
-					clientPhysique.setNumTel(resultSet.getString("numTel"));
-					clientPhysique.setNumFax(resultSet.getString("numFax"));
-					clientPhysique.setEmail(resultSet.getString("eMail"));
-				}
-
+				
+				clientMoral = new ClientMoral();
+				// appel des mutateurs
+				clientMoral.setSiret(resultSet.getInt("siret"));
+				clientMoral.setIdClient(resultSet.getInt("idClient"));
+				clientMoral.setNomClient(resultSet.getString("nom"));
+				clientMoral.setNumTel(resultSet.getString("numTel"));
+				clientMoral.setNumFax(resultSet.getString("numFax"));
+				clientMoral.setEmail(resultSet.getString("eMail"));
 			}
 
 			// Etape 5 : je ferme la connexion Ã  la BDD
@@ -143,7 +145,7 @@ public class ClientPhysiqueDaoSql implements ClientPhysiqueDao {
 			e.printStackTrace();
 		}
 		// Je retourne l'objet métier
-		return clientPhysique;
+		return clientMoral;
 	}
 
 }
