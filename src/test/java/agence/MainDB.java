@@ -7,11 +7,13 @@ import java.util.List;
 
 import agence.dao.AdresseDao;
 import agence.dao.AdresseDaoSql;
+import agence.dao.ClientPhysiqueDaoSql;
 import agence.dao.PassagerDao;
 import agence.dao.PassagerDaoSql;
 import agence.dao.ReservationDao;
 import agence.dao.ReservationDaoSql;
 import agence.model.Adresse;
+import agence.model.ClientPhysique;
 import agence.model.Passager;
 import agence.model.Reservation;
 
@@ -56,7 +58,15 @@ public class MainDB
         List<Reservation> listeReservations = reservationDao.findAll();
         Reservation reservation = reservationDao.findById(10);
         listeReservations = reservationDao.findByPassager(passager);
+       
+        ClientPhysiqueDaoSql ClientPhysiqueDaoSql = new ClientPhysiqueDaoSql();
+        // J'appelle la méthode findAll pour récupérer tous les BO de ce type de
+        // la BDD
+        List<ClientPhysique> listeClientPhysique = ClientPhysiqueDaoSql.findAll();
+        ClientPhysique clientPhysique = ClientPhysiqueDaoSql.findById(10);
+        System.out.println(clientPhysique);
 
+        
     }
 
 }
