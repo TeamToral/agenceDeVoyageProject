@@ -6,6 +6,7 @@ public class ClientPhysique extends Client {
 	
 	public ClientPhysique(String prenom)
     {
+		super();
         this.prenom = prenom;
     }
 
@@ -13,6 +14,7 @@ public class ClientPhysique extends Client {
     
     public ClientPhysique() {
 		// TODO Auto-generated constructor stub
+    	super();
 	}
 
 	/**
