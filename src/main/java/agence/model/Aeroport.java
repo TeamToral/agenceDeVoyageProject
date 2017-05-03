@@ -4,6 +4,7 @@ public class Aeroport {
 
 	private int idAero;
 	private String nom;
+	private Ville ville;
 	
 	//Constructeur par défault sans paramètre
 	public Aeroport() {
@@ -29,6 +30,16 @@ public class Aeroport {
 	}
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+	public Ville getVille() {
+		return ville;
+	}
+	public void setVille(Ville ville) {
+		this.ville = ville;
+	}
+	@Override
+	public String toString() {
+		return "Aeroport [idAero=" + idAero + ", nom=" + nom + ", ville=" + ville + "]";
 	}
 	
 }
