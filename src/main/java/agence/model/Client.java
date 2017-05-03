@@ -7,9 +7,6 @@ public class Client {
 	    // Nom du client
 	    private String nomClient;
 	    
-	    // Prenom du client
-	    private String prenomClient;
-	    
 	    // Num de tel du client
 	    private String numTel;
 	    
@@ -58,19 +55,7 @@ public class Client {
 			this.nomClient = nomClient;
 		}
 
-		/**
-		 * @return the prenomClient
-		 */
-		public String getPrenomClient() {
-			return prenomClient;
-		}
-
-		/**
-		 * @param prenomClient the prenomClient to set
-		 */
-		public void setPrenomClient(String prenomClient) {
-			this.prenomClient = prenomClient;
-		}
+		
 
 		/**
 		 * @return the numTel
@@ -119,11 +104,11 @@ public class Client {
 		 */
 		@Override
 		public String toString() {
-			return "Client [idClient=" + idClient + ", nomClient=" + nomClient + ", prenomClient=" + prenomClient
-					+ ", numTel=" + numTel + ", numFax=" + numFax + ", email=" + email + "]";
+			return "Client [idClient=" + idClient + ", nomClient=" + nomClient + ", numTel=" + numTel + ", numFax="
+					+ numFax + ", email=" + email + "]";
 		}
-	    
-	    
+
+	
 
 	    
 }
