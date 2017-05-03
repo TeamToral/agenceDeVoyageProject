@@ -10,6 +10,9 @@ public class Vol
 	private Date dateArrivee;
 	private Time heureDepart;
 	private Time heureArrivee;
+	private Aeroport aeroportArrivee;
+	private Aeroport aeroportDepart;
+	
 	public int getIdVol() {
 		return idVol;
 	}
@@ -40,10 +43,25 @@ public class Vol
 	public void setHeureArrivee(Time heureArrivee) {
 		this.heureArrivee = heureArrivee;
 	}
+	
+	public Aeroport getAeroportArrivee() {
+		return aeroportArrivee;
+	}
+	public void setAeroportArrivee(Aeroport aeroportArrivee) {
+		this.aeroportArrivee = aeroportArrivee;
+	}
+	public Aeroport getAeroportDepart() {
+		return aeroportDepart;
+	}
+	public void setAeroportDepart(Aeroport aeroportDepart) {
+		this.aeroportDepart = aeroportDepart;
+	}
 	@Override
 	public String toString() {
 		return "Vol [idVol=" + idVol + ", dateDepart=" + dateDepart + ", dateArrivee=" + dateArrivee + ", heureDepart="
-				+ heureDepart + ", heureArrivee=" + heureArrivee + "]";
+				+ heureDepart + ", heureArrivee=" + heureArrivee + ", aeroportArrivee=" + aeroportArrivee
+				+ ", aeroportDepart=" + aeroportDepart + "]";
 	}
+	
 	
 }
