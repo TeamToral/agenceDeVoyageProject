@@ -2,19 +2,19 @@ package agence.model;
 
 public abstract class Client {
 
-	private int idClient;
+	protected int idClient;
 
 	// Nom du client
-	private String nomClient;
+	protected String nomClient;
 
 	// Num de tel du client
-	private String numTel;
+	protected String numTel;
 
 	// Num de fax du client
-	private String numFax;
+	protected String numFax;
 
 	// email du client
-	private String email;
+	protected String email;
 
 	public Client(int idClient) {
 		this.idClient = idClient;
@@ -112,6 +112,7 @@ public abstract class Client {
 	public String toString() {
 		return "Client [idClient=" + idClient + ", nomClient=" + nomClient + ", numTel=" + numTel + ", numFax=" + numFax
 				+ ", email=" + email + "]";
+		
 	}
 
 }

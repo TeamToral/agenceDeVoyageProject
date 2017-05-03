@@ -56,6 +56,12 @@ public class ClientPhysiqueDaoSql implements ClientPhysiqueDao {
                
                 // appel du ou des mutateurs
                 clientPhysique.setPrenom(resultSet.getString("prenom"));
+                clientPhysique.setIdClient(resultSet.getInt("idClient"));
+				clientPhysique.setNomClient(resultSet.getString("nom"));
+				clientPhysique.setNumTel(resultSet.getString("numTel"));
+				clientPhysique.setNumFax(resultSet.getString("numFax"));
+				clientPhysique.setEmail(resultSet.getString("email"));
+				
                 
                 
                 // j'ajoute l'objet clientPhysique ainsi muté à  la liste des passagers
@@ -126,6 +132,12 @@ public class ClientPhysiqueDaoSql implements ClientPhysiqueDao {
                 clientPhysique = new ClientPhysique();
                 // appel des mutateurs
                 clientPhysique.setPrenom(resultSet.getString("prenom"));
+                clientPhysique.setIdClient(resultSet.getInt("idClient"));
+				clientPhysique.setNomClient(resultSet.getString("nom"));
+				clientPhysique.setNumTel(resultSet.getString("numTel"));
+				clientPhysique.setNumFax(resultSet.getString("numFax"));
+				clientPhysique.setEmail(resultSet.getString("eMail"));
+				
                
             }
 

@@ -7,12 +7,15 @@ import java.util.List;
 
 import agence.dao.AdresseDao;
 import agence.dao.AdresseDaoSql;
+import agence.dao.ClientMoralDaoSql;
 import agence.dao.ClientPhysiqueDaoSql;
 import agence.dao.PassagerDao;
 import agence.dao.PassagerDaoSql;
 import agence.dao.ReservationDao;
 import agence.dao.ReservationDaoSql;
 import agence.model.Adresse;
+import agence.model.Client;
+import agence.model.ClientMoral;
 import agence.model.ClientPhysique;
 import agence.model.Passager;
 import agence.model.Reservation;
@@ -43,6 +46,7 @@ public class MainDB
         // stock√©es en BDD
         List<Adresse> listeAdresses = adresseDao.findAll();
         Adresse adresse = adresseDao.findById(1);
+        System.out.println(adresse);
 
         // J'instancie le dao SQL de l'objet m√©tier √† r√©cup√©rer
         PassagerDao passagerDao = new PassagerDaoSql();
@@ -50,6 +54,7 @@ public class MainDB
         // la BDD
         List<Passager> listePassagers = passagerDao.findAll();
         Passager passager = passagerDao.findById(1);
+        System.out.println(passager);
 
         // J'instancie le dao SQL de l'objet m√©tier √† r√©cup√©rer
         ReservationDao reservationDao = new ReservationDaoSql();
@@ -58,14 +63,22 @@ public class MainDB
         List<Reservation> listeReservations = reservationDao.findAll();
         Reservation reservation = reservationDao.findById(10);
         listeReservations = reservationDao.findByPassager(passager);
+        System.out.println(passager);
        
         ClientPhysiqueDaoSql ClientPhysiqueDaoSql = new ClientPhysiqueDaoSql();
         // J'appelle la mÈthode findAll pour rÈcupÈrer tous les BO de ce type de
         // la BDD
         List<ClientPhysique> listeClientPhysique = ClientPhysiqueDaoSql.findAll();
-        ClientPhysique clientPhysique = ClientPhysiqueDaoSql.findById(10);
+        ClientPhysique clientPhysique = ClientPhysiqueDaoSql.findById(50);
         System.out.println(clientPhysique);
 
+        ClientMoralDaoSql ClientMoralDaoSql = new ClientMoralDaoSql();
+        // J'appelle la mÈthode findAll pour rÈcupÈrer tous les BO de ce type de
+        // la BDD
+        List<ClientMoral> listeClientMoral = ClientMoralDaoSql.findAll();
+        ClientMoral clientMoral = ClientMoralDaoSql.findById(50);
+        System.out.println(listeClientMoral);
+        
         
     }
 
