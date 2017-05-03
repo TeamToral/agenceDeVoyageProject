@@ -39,7 +39,7 @@ public class Aeroport {
 	}
 	@Override
 	public String toString() {
-		return "Aeroport [idAero=" + idAero + ", nom=" + nom + ", ville=" + ville + "]";
+		return "Aeroport [idAero=" + idAero + ", nom=" + nom + "]";
 	}
 	
 }
