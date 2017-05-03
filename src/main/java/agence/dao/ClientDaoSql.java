@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import agence.model.Client;
 import agence.model.Passager;
@@ -34,21 +35,18 @@ public class ClientDaoSql implements ClientDao {
 	       // Etape 2 : création du statement
 	        Statement statement = connexion.createStatement();
 
-	        /*
-	         * Etape 3 : ExÃ©cution de la requÃªte SQL
-	         */
+	        // Etape 3: Execution de la requete Sql
 	        ResultSet resultSet = statement
-	                .executeQuery("SELECT * FROM passager");
+	                .executeQuery("SELECT * FROM client");
 
-	        /*
-	         * Etape 4 : Parcours des rÃ©sultats
-	         */
+	        // Etape 4: Parcours des résultats
 	        while (resultSet.next())
 	        {
 	            // Chaque ligne du tableau de rÃ©sultat peut Ãªtre exploitÃ©e
-	            // cad, on va rÃ©cupÃ©rer chaque valeur de chaque colonne
-	            // je crÃ©e l'objet passager
-	            Passager passager = new Passager();
+	            // cad, on va récupérer chaque valeur de chaque colonne
+	            // je créé l'objet client
+	            Client client = new Client();
+	           
 	            // appel des mutateurs
 	            passager.setIdPas(resultSet.getInt("idPassager"));
 	            passager.setNom(resultSet.getString("nom"));
