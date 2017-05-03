@@ -1,8 +1,9 @@
 package agence.dao;
 
-import agence.model.Passager;
+import agence.model.Aeroport;
 
-public interface AeroportDAO extends Dao<Passager, Integer>{
+
+public interface AeroportDAO extends Dao<Aeroport, Integer>{
 
 	
 	
