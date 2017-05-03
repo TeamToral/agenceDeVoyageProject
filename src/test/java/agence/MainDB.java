@@ -7,11 +7,14 @@ import java.util.List;
 
 import agence.dao.AdresseDao;
 import agence.dao.AdresseDaoSql;
+import agence.dao.LoginDao;
+import agence.dao.LoginDaoSql;
 import agence.dao.PassagerDao;
 import agence.dao.PassagerDaoSql;
 import agence.dao.ReservationDao;
 import agence.dao.ReservationDaoSql;
 import agence.model.Adresse;
+import agence.model.Login;
 import agence.model.Passager;
 import agence.model.Reservation;
 
@@ -41,6 +44,7 @@ public class MainDB
         // stockées en BDD
         List<Adresse> listeAdresses = adresseDao.findAll();
         Adresse adresse = adresseDao.findById(1);
+        System.out.println(listeAdresses);
 
         // J'instancie le dao SQL de l'objet métier à récupérer
         PassagerDao passagerDao = new PassagerDaoSql();
@@ -56,6 +60,15 @@ public class MainDB
         List<Reservation> listeReservations = reservationDao.findAll();
         Reservation reservation = reservationDao.findById(10);
         listeReservations = reservationDao.findByPassager(passager);
+        
+        // J'instancie le dao SQL de l'objetm�tier � r�cup�rer
+        LoginDao loginDao = new LoginDaoSql();
+        // J'appelle la méthode findAll pour récupérer tous les BO de ce type de
+        // la BDD
+        List<Login> listeLogin = loginDao.findAll();
+        System.out.println(listeLogin);
+        Login login = loginDao.findById(1);
+        System.out.println(login);
 
     }
 
