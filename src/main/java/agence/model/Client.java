@@ -1,6 +1,6 @@
 package agence.model;
 
-public class Client {
+public abstract class Client {
 
 	 	private int idClient;
 	   
